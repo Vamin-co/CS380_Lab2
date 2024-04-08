@@ -79,16 +79,24 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+   /**
+    * finds the node in the tree with a specific value
+    * @param root the root of the tree/subtree
+    * @param key the key to search for
+    * @return true if the key is found, false otherwise
+    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+      if(root == null){
+         return false;
+      }
+      if(key == root.value){
+          return true;
+      } else if(key < root.value){
+          return find(root.left, key);
+      } else {
+          return find(root.right, key);
+      }          
    }
-   
-   
    
    /**
     * finds the node in the tree with the smallest key
