@@ -51,11 +51,16 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
-   */
+   /**
+    * in-order traversal
+    * @param root the root of the tree/subtree
+    */
    public void inOrderTraversal(Node root){
-      //implement me
+      if(root != null){
+         inOrderTraversal(root.left);
+         System.out.print(root.value + " ");
+         inOrderTraversal(root.right);
+      }
    }
    
    
